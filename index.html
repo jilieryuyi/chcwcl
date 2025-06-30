@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="专业的存货账务处理全套课程，包含7节详细视频教程和配套讲义，适合会计、财务人员学习存货会计处理知识。">
+  <meta name="keywords" content="存货账务处理,会计教程,视频课程,财务学习,存货会计,存货核算">
+  <title>存货账务处理全套教程 - 7节专业视频课程+讲义</title>
+  <style>
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #2980b9;
+      --text-color: #333;
+      --light-bg: #f9f9f9;
+      --dark-bg: #2c3e50;
+      --section-padding: 40px 0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: #f0f2f5;
+    }
+
+    .container {
+      width: 95%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--dark-bg) 0%, var(--secondary-color) 100%);
+      color: white;
+      padding: 20px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-icon {
+      margin-right: 10px;
+      background: white;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover, nav a.active {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .hero {
+      padding: 60px 0;
+      background: linear-gradient(rgba(52, 152, 219, 0.9), rgba(41, 128, 185, 0.9)),
+      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%232980b9"/><circle cx="50" cy="50" r="40" fill="%233498db"/></svg>');
+      background-size: cover;
+      color: white;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .btn-primary {
+      background: white;
+      color: var(--primary-color);
+    }
+
+    .btn-primary:hover {
+      background: #f8f9fa;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-3px);
+    }
+
+    .player-section {
+      background: white;
+      padding: var(--section-padding);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border-radius: 10px;
+      margin: -50px auto 40px;
+      position: relative;
+      z-index: 10;
+      max-width: 95%;
+    }
+
+    .video-container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .main-video {
+      flex: 1;
+      min-width: 320px;
+      background: #000;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+
+    .playlist-container {
+      flex: 0 0 300px;
+      background: white;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      max-height: 500px;
+      overflow-y: auto;
+    }
+
+    .playlist-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .playlist-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--dark-bg);
+    }
+
+    .playlist-status {
+      background: var(--light-bg);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+
+    .video-list {
+      list-style: none;
+    }
+
+    .video-item {
+      padding: 12px 10px;
+      border-bottom: 1px solid #f0f0f0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.2s ease;
+      border-radius: 6px;
+    }
+
+    .video-item:hover {
+      background: var(--light-bg);
+    }
+
+    .video-item.active {
+      background: rgba(52, 152, 219, 0.1);
+      border-left: 3px solid var(--primary-color);
+    }
+
+    .video-thumbnail {
+      width: 80px;
+      height: 45px;
+      border-radius: 4px;
+      background: linear-gradient(135deg, #3498db, #2c3e50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    .video-info {
+      flex: 1;
+    }
+
+    .video-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .video-duration {
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    .download-section {
+      background: var(--light-bg);
+      padding: var(--section-padding);
+      text-align: center;
+    }
+
+    .download-section h2 {
+      margin-bottom: 40px;
+      color: var(--dark-bg);
+    }
+
+    .download-cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .download-card {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+      width: 250px;
+    }
+
+    .download-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card-icon {
+      font-size: 50px;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+
+    .download-card h3 {
+      margin-bottom: 15px;
+      color: var(--dark-bg);
+    }
+
+    .card-btn {
+      margin-top: 15px;
+    }
+
+    .benefits-section {
+      padding: var(--section-padding);
+      background: white;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--dark-bg);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .benefit-card {
+      background: var(--light-bg);
+      padding: 25px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .benefit-card h3 {
+      color: var(--secondary-color);
+      margin: 15px 0;
+    }
+
+    .benefit-card p {
+      color: #555;
+    }
+
+    .footer {
+      background: var(--dark-bg);
+      color: white;
+      padding: 40px 0 20px;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-section h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--primary-color);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-color);
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .video-container {
+        flex-direction: column;
+      }
+
+      .playlist-container {
+        flex: 1;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .player-section {
+        margin-top: -30px;
+      }
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      padding: 15px 0;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    .breadcrumb a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+<!-- SEO: Semantic HTML Structure -->
+<header id="header">
+  <div class="container header-content">
+    <div class="logo">
+      <span class="logo-icon">会</span>
+      <span>财会学院</span>
+    </div>
+
+  </div>
+</header>
+
+
+
+<section class="hero">
+  <div class="container">
+    <h1>存货账务处理全套教程</h1>
+    <p>7节专业视频课程 + 完整讲义PDF下载，系统学习存货会计处理流程、计价方法、核算要点及实务操作技巧</p>
+    <div class="cta-buttons">
+      <a href="#player" class="btn btn-primary">立即观看课程</a>
+      <a href="#downloads" class="btn btn-secondary">下载资料</a>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section class="player-section" id="player">
+    <div class="container">
+      <h2 class="section-title">存货账务处理视频课程</h2>
+      <div class="video-container">
+        <div class="main-video">
+          <!-- HTML5 Video Player -->
+          <video id="main-video" controls poster="https://via.placeholder.com/800x450/3498db/ffffff?text=存货账务处理课程" width="100%" height="100%">
+            <source src="#" type="video/mp4">
+            <track kind="captions" src="#" srclang="zh" label="中文">
+            您的浏览器不支持 HTML5 视频播放。
+          </video>
+        </div>
+        <div class="playlist-container">
+          <div class="playlist-header">
+            <h3 class="playlist-title">课程列表</h3>
+            <span class="playlist-status">7节课</span>
+          </div>
+          <ul class="video-list" id="playlist">
+            <!-- Playlist items will be populated with JavaScript -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="download-section" id="downloads">
+    <div class="container">
+      <h2 class="section-title">资源下载</h2>
+      <div class="download-cards">
+        <div class="download-card">
+          <div class="card-icon">📥</div>
+          <h3>课程讲义PDF</h3>
+          <p>包含全部课程内容的详细讲义，方便复习与查阅，访问密码：8078</p>
+          <a href="https://url03.ctfile.com/f/64369603-1523384005-fbc6dd?p=8078" target="_blank" class="btn btn-primary card-btn">下载讲义</a>
+        </div>
+        <div class="download-card">
+          <div class="card-icon">💾</div>
+          <h3>视频合集下载</h3>
+          <p>整套课程的7节高清视频文件，访问密码：8078</p>
+          <a href="https://url03.ctfile.com/d/64369603-68850901-e801e9?p=8078" target="_blank" class="btn btn-primary card-btn">下载视频</a>
+        </div>
+<!--        <div class="download-card">-->
+<!--          <div class="card-icon">📋</div>-->
+<!--          <h3>练习题库</h3>-->
+<!--          <p>配套实务练习题与答案解析</p>-->
+<!--          <a href="#" class="btn btn-primary card-btn">下载习题</a>-->
+<!--        </div>-->
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits-section">
+    <div class="container">
+      <h2 class="section-title">课程学习收益</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">✔️</div>
+          <h3>全面掌握存货核算方法</h3>
+          <p>学习先进先出法、移动加权平均法等存货计价方法，掌握不同方法的账务处理技巧</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📊</div>
+          <h3>实战操作技能提升</h3>
+          <p>从存货初始计量到期末处理，结合案例掌握完整会计处理流程</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🔍</div>
+          <h3>复杂业务处理方法</h3>
+          <p>特殊行业存货处理、跌价准备计提等复杂业务的正确处理方式</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">💼</div>
+          <h3>实务工作应用</h3>
+          <p>将所学知识直接应用到实际工作中，解决工作中的存货会计问题</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-content">
+    <div class="footer-section">
+      <h3>财会学院</h3>
+      <p>提供专业、实用的会计财务课程，帮助财务从业者提升职业技能。</p>
+    </div>
+    <div class="footer-section">
+      <h3>快速链接</h3>
+      <ul class="footer-links">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">课程分类</a></li>
+        <li><a href="#">新手指南</a></li>
+        <li><a href="#">关于我们</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>联系我们</h3>
+      <ul class="footer-links">
+        <li>电话: 400-888-8888</li>
+        <li>邮箱: contact@cwkx.com</li>
+        <li>地址: 北京市朝阳区财会大厦</li>
+      </ul>
+    </div>
+  </div>
+  <div class="copyright">
+    <div class="container">
+      <p>&copy; 2023 财会学院 - 存货账务处理全套课程. 保留所有权利。</p>
+      <p>京ICP备12345678号</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const playlist = document.getElementById('playlist');
+    const mainVideo = document.getElementById('main-video');
+
+    // 课程数据
+    const courses = [
+      {
+        id: 1,
+        title: "第一课：存货的概述",
+        duration: "3:13",
+        src: "./video/1.mp4"
+      },
+      {
+        id: 2,
+        title: "第二课：存货的核算流程之存货的初始计量核算（1）",
+        duration: "25:56",
+        src: "./video/2.mp4"
+      },
+      {
+        id: 3,
+        title: "第三课：存货的核算流程之存货的初始计量核算（2）",
+        duration: "17:02",
+        src: "./video/3.mp4"
+      },
+      {
+        id: 4,
+        title: "第四课：存货的核算流程之存货的发出计量",
+        duration: "7:48",
+        src: "./video/4.mp4"
+      },
+      {
+        id: 5,
+        title: "第五课：存货的核算流程之存货的期末计量与核算",
+        duration: "19:34",
+        src: "./video/5.mp4"
+      },
+      {
+        id: 6,
+        title: "第六课：存货的核算流程之存货的清查",
+        duration: "6:06",
+        src: "./video/6.mp4"
+      },
+      {
+        id: 7,
+        title: "第七课：存货核算过程中的问题识别与防范",
+        duration: "27:27",
+        src: "./video/7.mp4"
+      }
+    ];
+
+    // 生成播放列表
+    courses.forEach(course => {
+      const li = document.createElement('li');
+      li.className = 'video-item';
+      if (course.id === 1) li.classList.add('active');
+
+      li.innerHTML = `
+                    <div class="video-thumbnail">${course.id}</div>
+                    <div class="video-info">
+                        <div class="video-title">${course.title}</div>
+                        <div class="video-duration">时长: ${course.duration}</div>
+                    </div>
+                `;
+
+      li.addEventListener('click', () => {
+        // 移除所有active类
+        document.querySelectorAll('.video-item').forEach(item => {
+          item.classList.remove('active');
+        });
+
+        // 为当前项添加active
+        li.classList.add('active');
+
+        // 更改视频源
+        mainVideo.src = course.src;
+        mainVideo.poster = `https://via.placeholder.com/800x450/3498db/ffffff?text=${encodeURIComponent(course.title)}`;
+        mainVideo.load();
+        mainVideo.play();
+
+        // 更新页面标题
+        document.title = `${course.title} - 存货账务处理教程`;
+      });
+
+      playlist.appendChild(li);
+    });
+
+    // 初始化第一课
+    if (courses.length > 0) {
+      mainVideo.src = courses[0].src;
+      mainVideo.poster = `https://via.placeholder.com/800x450/3498db/ffffff?text=${encodeURIComponent(courses[0].title)}`;
+    }
+  });
+</script>
+</body>
+</html>
